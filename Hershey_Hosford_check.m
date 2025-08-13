@@ -1,0 +1,267 @@
+function Hershey_Hosford_check()
+clear
+clc
+close all
+MatData.sigT00=1;
+mdata=0.0;
+
+[plotData1_sx_hos6,plotData1_sy_hos6,plotData2_sx_hos6,plotData2_sy_hos6] = Data_generate_SSSMises(mdata,MatData,-1);
+[plotData1_sx_hos8,plotData1_sy_hos8,plotData2_sx_hos8,plotData2_sy_hos8] = Data_generate_SSSMises(mdata,MatData,-2);
+[plotData1_sx_6,plotData1_sy_6,plotData2_sx_6,plotData2_sy_6] = Data_generate_SSSMises(mdata,MatData,1);
+[plotData1_sx_7,plotData1_sy_7,plotData2_sx_7,plotData2_sy_7] = Data_generate_SSSMises(mdata,MatData,2);
+
+[plotData1_sx_Dru1,plotData1_sy_Dru1,plotData2_sx_Dru1,plotData2_sy_Dru1] = Data_generate_SSSMises(mdata,MatData,-3);
+[plotData1_sx_Dru2,plotData1_sy_Dru2,plotData2_sx_Dru2,plotData2_sy_Dru2] = Data_generate_SSSMises(mdata,MatData,-4);
+
+figure(2)
+plot(plotData1_sx_6,plotData1_sy_6,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_hos6,plotData1_sy_hos6,'.','color','m','markersize',16);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.034, c=-0.0765, e=0.0510, g=-0.0085,b=d=0)","Hershey m=6");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+figure(3)
+plot(plotData1_sx_7,plotData1_sy_7,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_hos8,plotData1_sy_hos8,'.','color','m','markersize',16);
+% plot(plotData1_sx_hos8,plotData1_sy_hos8,'color','m','linewidth',1);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.0581, c=-0.1319, e=0.0886, g=-0.0148, b=d=0)","Hershey m=8");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+figure(4)
+plot(plotData2_sx_6,plotData2_sy_6,'linewidth',1,'color','b');
+hold on 
+plot(plotData2_sx_hos6,plotData2_sy_hos6,'.','color','m','markersize',16);
+
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.034, c=-0.0765, e=0.0510, g=-0.0085,b=d=0)","Hershey m=6");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}=\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{xy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+
+figure(5)
+plot(plotData2_sx_7,plotData2_sy_7,'linewidth',1,'color','b');
+hold on 
+plot(plotData2_sx_hos8,plotData2_sy_hos8,'.','color','m','markersize',16);
+
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.0581, c=-0.1319, e=0.0886, g=-0.0148, b=d=0)","Hershey m=8");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}=\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{xy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+
+figure(6)
+plot(plotData1_sx_6,plotData1_sy_6,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_Dru1,plotData1_sy_Dru1,'.','color','m','markersize',16);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.034, c=-0.0765, e=0.0510, g=-0.0085,b=d=0)","Drucker c=1.226");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+figure(7)
+plot(plotData1_sx_7,plotData1_sy_7,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_Dru2,plotData1_sy_Dru2,'.','color','m','markersize',16);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Proposed model (a=1.0581, c=-0.1319, e=0.0886, g=-0.0148, b=d=0)","Drucker c=2");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+figure(8)
+plot(plotData1_sx_Dru1,plotData1_sy_Dru1,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_hos6,plotData1_sy_hos6,'.','color','m','markersize',16);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Drucker c=1.226","Hershey m=6");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+figure(9)
+plot(plotData1_sx_Dru2,plotData1_sy_Dru2,'linewidth',1,'color','b');
+hold on 
+plot(plotData1_sx_hos8,plotData1_sy_hos8,'.','color','m','markersize',16);
+set(gca, 'FontSize', 12,'FontName','Times New Roman');
+axis equal
+hl=legend("Drucker c=2","Hershey m=8");
+set(hl,'Box','off','FontSize',12,'FontName','Times New Roman');
+xlabel('\sigma_{xx}','FontSize',16,'FontName','Times New Roman')
+ylabel('\sigma_{yy}','FontSize',16,'FontName','Times New Roman')
+xlim([-1.5,1.5]);ylim([-1.5,1.5]);
+hold off
+
+
+%%        Check the convexity
+% Convex_for_m6=convex_Test_for_HH(MatData,mdata,1,1)
+% Convex_for_m8=convex_Test_for_HH(MatData,mdata,1,2)
+%%
+end
+function [plotData1_sx,plotData1_sy,plotData2_sx,plotData2_sy] = Data_generate_SSSMises(mdata,matdata,yieldFunctionType)
+% mdata 模型参数
+% matdata 材料参数
+
+%%  平面应力二维图 ：sigma_xx-sigma_yy
+% 
+if(yieldFunctionType<0)
+    poleAngle=0:6:360;
+else
+    poleAngle=0:0.1:360;
+end
+plotData1_sx=[];
+plotData1_sy=[];
+for i=1:length(poleAngle)
+    angle=poleAngle(i)*pi/180;
+    sig.xx=cos(angle);
+    sig.yy=sin(angle);
+    sig.xy=0;
+%     dnom=effstress_of_StateMises(matdata,mdata,sig);
+%     dnom=effstress_of_StateAsymHill(matdata,mdata,sig,0);
+    dnom=effect_stress(matdata,mdata,sig,matdata.sigT00,yieldFunctionType);
+    xnom=matdata.sigT00/dnom;
+    plotData1_sx(i)=sig.xx*xnom;
+    plotData1_sy(i)=sig.yy*xnom;
+end
+
+
+
+%% 平面应力二维图 ：sigma_xx-sigma_xy
+if(yieldFunctionType<0)
+    poleAngle=0:9:360;
+else
+    poleAngle=0:0.1:360;
+end
+plotData2_sx=[];
+plotData2_sy=[];
+for i=1:length(poleAngle)
+    angle=poleAngle(i)*pi/180;
+    sig.xx=cos(angle);
+    sig.yy=cos(angle);
+    sig.xy=sin(angle);
+%     dnom=effstress_of_StateMises(matdata,mdata,sig);
+    dnom=effect_stress(matdata,mdata,sig,matdata.sigT00,yieldFunctionType);
+    xnom=matdata.sigT00/dnom;
+    plotData2_sx(i)=sig.xx*xnom;
+    plotData2_sy(i)=sig.xy*xnom;
+end
+
+
+end
+function [sig_bar] = effect_stress(matdata,mdata,sig,sigT00,yieldType)
+if yieldType==1
+    sig_bar=effstress_of_StateMisesC(matdata,mdata,sig);
+elseif yieldType==2
+    sig_bar=effstress_of_StateMisesC2(matdata,mdata,sig);
+elseif yieldType==-1
+    [sig_bar] = effect_stress_of_Hosford(sig,6);
+elseif yieldType==-2
+    [sig_bar] = effect_stress_of_Hosford(sig,8);
+ elseif yieldType==-3
+    [sig_bar] = effect_stress_of_Drucker(sig,1.226);
+elseif yieldType==-4
+    [sig_bar] = effect_stress_of_Drucker(sig,2);
+    
+end
+end
+function [eff_sig] = effstress_of_StateMisesC(Mdata,mdata,sig)
+eta=(sig.xx+sig.yy)/sqrt(sig.xx^2+sig.yy^2-sig.xx*sig.yy+3*sig.xy^2);
+sigvm=sqrt(sig.xx^2+sig.yy^2-sig.xx*sig.yy+3*sig.xy^2);
+%% m=6
+faeta(1)=1.0340;
+faeta(2)=-0.0765;
+faeta(3)=0.0510;
+faeta(4)=-0.0085;
+
+%%
+f_eta=faeta(1)+faeta(2)*eta^2+faeta(3)*eta^4+faeta(4)*eta^6;
+eff_sig=f_eta*sigvm;
+
+end
+
+function [eff_sig] = effstress_of_StateMisesC2(Mdata,mdata,sig)
+eta=(sig.xx+sig.yy)/sqrt(sig.xx^2+sig.yy^2-sig.xx*sig.yy+3*sig.xy^2);
+sigvm=sqrt(sig.xx^2+sig.yy^2-sig.xx*sig.yy+3*sig.xy^2);
+%% m=8
+
+faeta(1)=1.0581;
+faeta(2)=-0.1319;
+faeta(3)=0.0886;
+faeta(4)=-0.0148;
+
+
+%%
+f_eta=faeta(1)+faeta(2)*eta^2+faeta(3)*eta^4+faeta(4)*eta^6;
+eff_sig=f_eta*sigvm;
+
+end
+function [sig_bar] = effect_stress_of_Hosford(sig,m)
+
+TM=[2/3 -1/3 -1/3;-1/3 2/3 -1/3;-1/3 -1/3 2/3];
+sg(1)=(sig.xx+sig.yy+sqrt((sig.xx-sig.yy)^2+4*sig.xy^2))/2;
+sg(2)=(sig.xx+sig.yy-sqrt((sig.xx-sig.yy)^2+4*sig.xy^2))/2;
+sg(3)=0.0;
+sdg=TM*sg';
+TS1=sdg(1);
+TS2=sdg(2);
+TS3=sdg(3);
+Tsim=((abs(TS1-TS2)^m+abs(TS2-TS3)^m+abs(TS3-TS1)^m)/2)^(1/m);
+sig_bar=Tsim;
+
+end
+
+function [sig_bar] = effect_stress_of_Drucker(sig,c)
+
+J2=(sig.xx^2+sig.yy^2-sig.xx*sig.yy)/3+sig.xy^2;
+J3=2/27*(sig.xx^3+sig.yy^3)-1/9*sig.xx*sig.yy*(sig.xx+sig.yy)+1/3*sig.xy^2*(sig.xx+sig.yy);
+
+sig_bar=(1/27-c*4/729)^(-1/6)*(J2^3-c*J3^2)^(1/6);
+
+end
+
+
+
+
+
+
+
+
+

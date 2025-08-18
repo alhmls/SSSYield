@@ -7,7 +7,7 @@ MatDate.Txy00=1;
 Txy00=sigref;
 Cxy00=1;
 
-delta_ifa=0.01/180*pi;
+delta_ifa=0.001/180*pi;
 alpha=0:0.1:360;
 beita=-90:1:90;
 alpha=alpha.*(pi/180);
@@ -22,7 +22,7 @@ for is=1:length(alpha)
     for js=1:length(beita)
         if1=alpha(is);
         bt1=beita(js);
-        % 第一个点
+        % 碌脷脪禄赂枚碌茫
         sig_1_try.xx=cos(bt1)*cos(if1);
         sig_1_try.yy=cos(bt1)*sin(if1);
         sig_1_try.xy=sin(bt1);
@@ -181,4 +181,5 @@ iRGB = mcolormap(id,:);
 else
 iRGB = [0,0,0];
 end
+
 end

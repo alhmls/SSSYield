@@ -9,8 +9,8 @@ convex=1;
 
 
 delta_ifa=0.001/180*pi;
-alpha=0:0.1:360;
-beita=-90:0.1:90;
+alpha=0:0.5:360;
+beita=-90:0.5:90;
 alpha=alpha.*(pi/180);
 beita=beita.*(pi/180);
 alphac=zeros(360*180*10,1);
@@ -212,3 +212,4 @@ iRGB = [0,0,0];
 end
 
 end
+

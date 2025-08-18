@@ -1,16 +1,16 @@
 function [convex] = convex_Test_for_StateYieldFunction2(MatDate,mdata,sigref,calType,yieldType,isplot)
-% ¿ÉÒÔÍ¨¹ı calType Ñ¡ÔñÍ¨¹ı²ÎÊıÊäÈë»¹ÊÇÍ¨¹ı²ÄÁÏ²ÎÊıÖ±½ÓÊäÈë£»
-% Ò²¿ÉÒÔÍ¨¹ı isplot Ñ¡ÔñÊÇ·ñ»æÍ¼
+% å¯ä»¥é€šè¿‡ calType é€‰æ‹©é€šè¿‡å‚æ•°è¾“å…¥è¿˜æ˜¯é€šè¿‡ææ–™å‚æ•°ç›´æ¥è¾“å…¥ï¼›
+% ä¹Ÿå¯ä»¥é€šè¿‡ isplot é€‰æ‹©æ˜¯å¦ç»˜å›¾
 
 
 convex=1;
  
-%    calType      %±íÊ¾ÏÈ¼ÆËã²ÎÊıÔÙ¼ÆËãµÈĞ§Ó¦Á¦
+%    calType      %è¡¨ç¤ºå…ˆè®¡ç®—å‚æ•°å†è®¡ç®—ç­‰æ•ˆåº”åŠ›
 
 
-delta_ifa=0.01/180*pi;
-alpha=0:0.5:360;
-beita=-90:0.5:90;
+delta_ifa=0.001/180*pi;
+alpha=0:0.1:360;
+beita=-90:0.1:90;
 alpha=alpha.*(pi/180);
 beita=beita.*(pi/180);
 alphac=zeros(360*180*10,1);
@@ -23,7 +23,7 @@ for is=1:length(alpha)
     for js=1:length(beita)
         if1=alpha(is);
         bt1=beita(js);
-        % µÚÒ»¸öµã
+        % ç¬¬ä¸€ä¸ªç‚¹
         sig_1_try.xx=cos(bt1)*cos(if1);
         sig_1_try.yy=cos(bt1)*sin(if1);
         sig_1_try.xy=sin(bt1);
@@ -95,7 +95,7 @@ for is=1:length(ifa)
     end
 end
 
-% µ¥ÖáÀ­ÉìÇúÏß£º
+% å•è½´æ‹‰ä¼¸æ›²çº¿ï¼š
 theta=1:0.01:180;
 for is=1:length(theta)
     the=theta(is)*pi/180;
@@ -108,7 +108,7 @@ for is=1:length(theta)
     utsigyy(is)=r_radus*sin(the)*sin(the);
     utsigxy(is)=r_radus*cos(the)*sin(the);
 end
-% µ¥ÖáÑ¹ËõÇúÏß£º
+% å•è½´å‹ç¼©æ›²çº¿ï¼š
 for is=1:length(theta)
     the=theta(is)*pi/180;
     sig.xx =-cos(the)*cos(the);
@@ -210,4 +210,5 @@ iRGB = mcolormap(id,:);
 else
 iRGB = [0,0,0];
 end
+
 end

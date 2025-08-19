@@ -14,7 +14,7 @@ Mdata.sigC45=146.499;
 Mdata.sigUT=Mdata.sigT00;
 Mdata.sigPST=2.50639853747715e+002;
 Mdata.sigPST=250.640;
-Mdata.sigPSC=Mdata.sigC90*Mdata.sigPST/Mdata.sigT00*0.92;
+Mdata.sigPSC=156.5;
 Mdata.sigUC=Mdata.sigC90;
 Mdata.sigBC=(Mdata.sigC00+Mdata.sigC90+2*Mdata.sigC45)/4;
 Mdata.sigSS=Mdata.sigPS;
@@ -52,3 +52,4 @@ Mdata.other5.yy=239.2979;
 
 
 end
+
